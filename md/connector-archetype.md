@@ -46,7 +46,7 @@ In this section we'll look into the different component of a connector project, 
 #### Connector definition
 A connector is first defined by its **definition**.  It is an XML file located in _src/main/resources/[connector name].def_ by default. The XSD is available in _schemas/connector-definition-descriptor.xsd_, you can import it in a IDE to get completion: 
 
-![Connector definition schema](connector-definition-descriptor.svg)
+![Connector definition schema](images/connector-definition-descriptor.svg)
 
 
 
