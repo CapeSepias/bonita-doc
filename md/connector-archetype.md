@@ -39,6 +39,42 @@ mvn archetype:generate -DarchetypeGroupId=org.bonitasoft.archetypes -DarchetypeA
 ```
 A folder name _[your artifact id]_ containing your project should be created. This connector project can already be built, imported and used in a process.
 
-### Example 
+### Connector developpment
 
-Coming soon -> A tuto to create a small connector (need to fine a idea) 
+In this section we'll look into the different component of a connector project, and how you should use them to develop your connector.
+
+#### Connector definition
+A connector is first defined by its **definition**.  It is an XML file located in _src/main/resources/[connector name].def_ by default. The XSD is available in _schemas/connector-definition-descriptor.xsd_, you can import it in a IDE to get completion: 
+
+![Connector definition schema](connector-definition-descriptor.svg)
+
+
+
+Example: 
+``` xml
+<?xml version="1.0" encoding="UTF-8"?>
+<definition:ConnectorDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1">
+    <id>myConnector</id>
+    <version>1.0.0</version>
+    <icon>connector.png</icon> 
+    <category icon="connector.png" id="Custom"/>
+  
+    <!-- Connector inputs -->
+    <input mandatory="true" name="defaultInput" type="java.lang.String"/>
+    
+    <!-- Connector outputs -->
+    <output name="defaultOutput" type="java.lang.String"/>
+    
+    <!--
+       Pages and widgets to use the connector in the Bonita Studio.
+       - Each widget must be bound to an input
+       - Page titles must be defined in the properties files
+       - Widget labels must be defined in the properties files
+       - Page and widget descriptions can be defined in the properties files (optional)
+    -->
+    <page id="defaultPage">
+        <widget xsi:type="definition:Text" id="defaultInputWidget" inputName="defaultInput"/>
+    </page>
+  
+</definition:ConnectorDefinition>
+```
