@@ -44,11 +44,8 @@ A folder name _[your artifact id]_ containing your project should be created. Th
 In this section we'll look into the different component of a connector project, and how you should use them to develop your connector.
 
 #### Connector definition
-A connector is first defined by its **definition**.  It is an XML file located in _src/main/resources/[connector name].def_ by default. The XSD is available in _schemas/connector-definition-descriptor.xsd_, you can import it in a IDE to get completion: 
-
-![Connector definition schema](images/connector-definition-descriptor.svg)
-
-
+A connector is first defined by its **definition**.  It is an XML file located in _src/main/resources/[connector name].def_ by default.  
+The XSD is available in _schemas/connector-definition-descriptor.xsd_, you can import it in a IDE to get completion. ![Connector definition xsd overview](images/connector-def-xsd-overview.png)
 
 Example: 
 ``` xml
